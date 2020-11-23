@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+// Pages
+import { ListPageComponent } from './pages/list-page/list-page.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ListPageComponent,
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class PhotosRoutingModule {}

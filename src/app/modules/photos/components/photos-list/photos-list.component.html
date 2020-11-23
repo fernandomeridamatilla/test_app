@@ -1,0 +1,13 @@
+<ion-list>
+  <ion-virtual-scroll [items]="photos" approxItemHeight="87px">
+    <ion-item *virtualItem="let item">
+      <ion-avatar slot="start">
+        <ion-img [src]="item.photo"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2>Id: {{ item.id }}</h2>
+        <h2>Autor: {{ item.text }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-virtual-scroll>
+</ion-list>

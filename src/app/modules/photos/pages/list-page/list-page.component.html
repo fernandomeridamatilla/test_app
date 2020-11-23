@@ -1,0 +1,59 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Listado </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid [style.height]="'100%'">
+    <app-photos-list *ngIf="showList" [photos]="photos"></app-photos-list>
+
+
+    <ion-row [style.height]="'100%'" class="ion-justify-content-center">
+      <ion-col [style.text-align]="'center'" class="ion-align-self-center">
+        <span *ngIf="showMessage">
+          No se han encontrado imágenes que mostrar
+        </span>
+        <ion-spinner *ngIf="isLoading"></ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Listado </ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="!isLoading">
+    <ion-searchbar
+      (ionChange)="onInputChange($event)"
+      inputmode="text"
+      placeholder="Buscar..."
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid [style.height]="'100%'">
+    <app-photos-list
+      *ngIf="listIsVisible"
+      [photos]="filteredPhotos"
+    ></app-photos-list>
+
+    <ion-row *ngIf="notFoundMessageIsVisible">
+      <ion-col class="ion-margin" [style.text-align]="'center'">
+        <span> No se han encontrado imágenes que mostrar </span>
+      </ion-col>
+    </ion-row>
+
+    <ion-row
+      *ngIf="isLoading"
+      [style.height]="'100%'"
+      class="ion-justify-content-center"
+    >
+      <ion-col [style.text-align]="'center'" class="ion-align-self-center">
+        <ion-spinner></ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
