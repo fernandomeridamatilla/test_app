@@ -15,6 +15,8 @@ export class ListPageComponent implements OnInit {
   filteredPhotos: Photo[];
   isLoading: boolean;
 
+  readonly notFoundMessage = 'No se han encontrado imágenes que mostrar';
+
   constructor(private picsumService: PicsumService) {}
 
   get notFoundMessageIsVisible(): boolean {
