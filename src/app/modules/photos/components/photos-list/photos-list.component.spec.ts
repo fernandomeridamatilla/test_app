@@ -9,8 +9,8 @@ describe('PhotosListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhotosListComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [PhotosListComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PhotosListComponent);
@@ -18,7 +18,5 @@ describe('PhotosListComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
 });

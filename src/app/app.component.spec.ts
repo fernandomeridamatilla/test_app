@@ -8,7 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-
   let statusBarSpy;
   let splashScreenSpy;
   let platformReadySpy;
@@ -44,7 +43,4 @@ describe('AppComponent', () => {
     expect(statusBarSpy.styleDefault).toHaveBeenCalled();
     expect(splashScreenSpy.hide).toHaveBeenCalled();
   });
-
-  // TODO: add more tests!
-
 });

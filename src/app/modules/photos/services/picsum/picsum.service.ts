@@ -31,11 +31,7 @@ export class PicsumService {
 }
 
 function formattedPhotos(photos: PicsumPhoto[]): Photo[] {
-  return photos?.map((photo: PicsumPhoto) => ({
-    id: photo.id,
-    photo: `${BASE_URL}/id/${photo.id}/500/500`,
-    text: photo.author,
-  }));
+  return photos?.map((photo: PicsumPhoto) => formattedPhoto(photo));
 }
 
 function incrementPhotos(photos: Photo[]): Photo[] {

@@ -3,14 +3,20 @@ import { IonicModule } from '@ionic/angular';
 
 import { ListPageComponent } from './list-page.component';
 
+import { PicsumService } from '../../services/picsum/picsum.service';
+
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MockPicsumService } from '../../services/picsum/picsum.service.spec';
+
 describe('ListPageComponent', () => {
   let component: ListPageComponent;
   let fixture: ComponentFixture<ListPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListPageComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [ListPageComponent],
+      imports: [IonicModule.forRoot(), HttpClientTestingModule],
+      providers: [{ provide: PicsumService, useValue: MockPicsumService() }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ListPageComponent);
@@ -18,7 +24,5 @@ describe('ListPageComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
 });
