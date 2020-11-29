@@ -115,8 +115,3 @@ function getPhoto(): Photo {
     text: getPicsumPhotos()[0].author,
   };
 }
-
-export const MockPicsumService = (): unknown => ({
-  getAll: () => of(getPicsumPhotos()),
-  getDetail: () => of(getPhoto()),
-});
